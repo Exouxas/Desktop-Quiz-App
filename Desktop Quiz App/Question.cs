@@ -9,13 +9,18 @@ namespace Desktop_Quiz_App
     /// <summary>
     /// Contains paramaters for a specific questions
     /// </summary>
-    public class Question
+    /// <param name="query">The question being asked</param>
+    /// <param name="options">An array of possible answers</param>
+    /// <param name="correctAnswer">The index of the correct answer</param>
+    /// <param name="value">An arbitrary value that the quiz can use to calculate score</param>
+    /// <param name="penalty">The amount of negative points (out of the value) being subtracted upon a wrong answer</param>
+    public struct Question(string query, string[] options, int correctAnswer, float value, float penalty)
     {
-        private string _query; // The question in... question
-        private string[] _options; // List of potential options
-        private int _correctAnswer; // Index of _options
-        private float _value; // Arbitrary number
-        private float _penalty; // In percent
+        private string _query = query;
+        private string[] _options = options;
+        private int _correctAnswer = correctAnswer;
+        private float _value = value;
+        private float _penalty = penalty;
 
 
     }
