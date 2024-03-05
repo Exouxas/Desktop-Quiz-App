@@ -22,6 +22,25 @@ namespace Desktop_Quiz_App
         private float _value = value;
         private float _penalty = penalty;
 
+        /// <summary>
+        /// Checks whether the answer is correct
+        /// </summary>
+        /// <param name="answer"></param>
+        /// <returns></returns>
+        public bool CheckAnswer(int answer) { return answer == _correctAnswer; }
 
+        /// <summary>
+        /// Gets the amount of points that should be awarded if the answer is correct
+        /// </summary>
+        /// <returns></returns>
+        public float CorrectPoints() { return _correctAnswer; }
+
+        /// <summary>
+        /// Gets the amount of points that should be awarded if the answer is wrong
+        /// </summary>
+        /// <returns></returns>
+        public float WrongPoints() { return -_correctAnswer * _penalty; }
+
+        // TODO: Replace this with something more sensible. I don't like the way you get the points, as it feels like getters and setters from Java.
     }
 }
