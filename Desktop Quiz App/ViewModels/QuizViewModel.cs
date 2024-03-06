@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,8 @@ namespace DesktopQuizApp.ViewModels
     {
         public string Name { get; set; }
 
+        private List<Question> _questions = new();
+
         /// <summary>
         /// 
         /// </summary>
@@ -25,7 +28,30 @@ namespace DesktopQuizApp.ViewModels
 
         public bool LoadQuiz(string filename)
         {
-            return false;
+            using(StreamReader reader = new(filename))
+            {
+                _questions.Clear();
+
+                while(!reader.EndOfStream)
+                {
+                    string? line = reader.ReadLine();
+                    if (line == null) return false;
+
+                    string[] parts = line.Split(';');
+
+                    _questions.Add(new Question(
+                        parts[0],
+                        int.Parse(parts[1]),
+                        float.Parse(parts[2]),
+                        float.Parse(parts[3]),
+                        parts.Skip(4).ToArray()
+                        ));
+                }
+
+
+                reader.Close();
+                return true;
+            }
         }
 
         
