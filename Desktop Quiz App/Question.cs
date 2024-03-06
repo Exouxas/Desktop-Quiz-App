@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Desktop_Quiz_App
+namespace DesktopQuizApp
 {
     /// <summary>
     /// Contains paramaters for a specific questions

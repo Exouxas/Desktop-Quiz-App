@@ -1,7 +1,7 @@
-﻿<Application x:Class="Desktop_Quiz_App.App"
+﻿<Application x:Class="DesktopQuizApp.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Desktop_Quiz_App"
+             xmlns:local="clr-namespace:DesktopQuizApp"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          

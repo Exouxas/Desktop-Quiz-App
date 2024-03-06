@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Desktop_Quiz_App.UI
+namespace DesktopQuizApp.UI
 {
     /// <summary>
     /// Interaction logic for QuestionControl.xaml

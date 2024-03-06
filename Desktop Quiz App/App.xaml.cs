@@ -2,7 +2,7 @@
 using System.Data;
 using System.Windows;
 
-namespace Desktop_Quiz_App
+namespace DesktopQuizApp
 {
     /// <summary>
     /// Interaction logic for App.xaml

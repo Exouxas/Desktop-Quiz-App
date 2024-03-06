@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using DesktopQuizApp.ViewModels;
+using Microsoft.Win32;
 using System.Diagnostics;
 using System.Text;
 using System.Windows;
@@ -11,7 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Desktop_Quiz_App
+namespace DesktopQuizApp
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
