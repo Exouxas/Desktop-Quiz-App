@@ -1,4 +1,5 @@
-﻿using DesktopQuizApp.ViewModels;
+﻿using DesktopQuizApp.Controls;
+using DesktopQuizApp.ViewModels;
 using Microsoft.Win32;
 using System.Diagnostics;
 using System.Text;
@@ -19,7 +20,8 @@ namespace DesktopQuizApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Quiz? _activeQuiz = null;
+        private QuizViewModel? _activeQuiz = null;
+        private QuizControl? _currentQuizControl = null;
 
         public MainWindow()
         {
@@ -34,15 +36,27 @@ namespace DesktopQuizApp
 
             if (result == true)
             {
-                _activeQuiz = new Quiz(dialog.FileName);
+                _activeQuiz = new QuizViewModel();
+                bool isFileLoaded = _activeQuiz.LoadQuiz(dialog.FileName);
+
+                if(isFileLoaded)
+                {
+                    // Remove old quiz control
+                    if(_currentQuizControl != null)
+                    {
+                        MainGrid.Children.Remove(_currentQuizControl);
+                        _currentQuizControl = null;
+                    }
+
+                    // Create and add the new quiz control
+                    _currentQuizControl = new(_activeQuiz);
+                    MainGrid.Children.Add(_currentQuizControl);
+                    Grid.SetRow(_currentQuizControl, 1);
+                }
             }
         }
 
         // TODO: Event handler for next question
         // Either remove the previous question and add the new one, or update the control(s) to match
-
-        // Sample of how to add and set position of item in Grid:
-        // MainGrid.Children.Add(_welcomeScreen);
-        // Grid.SetRow(_welcomeScreen, 1);
     }
 }
