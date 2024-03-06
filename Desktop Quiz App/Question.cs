@@ -16,11 +16,14 @@ namespace DesktopQuizApp
     /// <param name="options">An array of possible answers</param>
     public struct Question(string query, int correctAnswer, float value, float penalty, string[] options)
     {
-        private string _query = query;
+        public string Query { get; } = query;
+        public string[] Options { get; } = options;
+        public string CorrectAnswer { get; } = options[correctAnswer];
+
+
         private int _correctAnswer = correctAnswer;
         private float _value = value;
         private float _penalty = penalty;
-        private string[] _options = options;
 
         /// <summary>
         /// Checks whether the answer is correct
