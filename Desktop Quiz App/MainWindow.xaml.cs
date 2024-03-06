@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using Microsoft.Win32;
+using System.Diagnostics;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,6 +18,8 @@ namespace Desktop_Quiz_App
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Quiz? _activeQuiz = null;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -23,7 +27,14 @@ namespace Desktop_Quiz_App
 
         private void OpenButton_Click(object sender, RoutedEventArgs e)
         {
-            // Spawn a file dialog box
+            OpenFileDialog dialog = new();
+            dialog.Filter = "Quiz files|*.quiz";
+            bool? result = dialog.ShowDialog();
+
+            if (result == true)
+            {
+                _activeQuiz = new Quiz(dialog.FileName);
+            }
         }
 
         // TODO: Event handler for next question
