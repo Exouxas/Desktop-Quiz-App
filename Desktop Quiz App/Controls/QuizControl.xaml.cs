@@ -30,5 +30,10 @@ namespace DesktopQuizApp.Controls
         {
             this.DataContext = viewmodel;
         }
+
+        private void NextButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

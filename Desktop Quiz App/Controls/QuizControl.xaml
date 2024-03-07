@@ -12,6 +12,14 @@
         <vm:QuizViewModel/>
     </UserControl.DataContext>
     <Grid>
-        <Label Content="{Binding Name}"></Label>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="64"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Content="{Binding Name}" FontSize="30"/>
+        <!-- Current question gets inserted here -->
+        <Button Grid.Row="2" Content="Next" Click="NextButton_Click"/>
     </Grid>
 </UserControl>
