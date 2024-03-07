@@ -14,7 +14,7 @@ namespace DesktopQuizApp.ViewModels
     {
         public string Name { get; set; }
 
-        private List<Question> _questions = new();
+        private List<QuestionViewModel> _questions = new();
 
         /// <summary>
         /// 
@@ -41,7 +41,7 @@ namespace DesktopQuizApp.ViewModels
 
                     string[] parts = line.Split(';');
 
-                    _questions.Add(new Question(
+                    _questions.Add(new QuestionViewModel(
                         parts[0],
                         int.Parse(parts[1]),
                         float.Parse(parts[2]),
