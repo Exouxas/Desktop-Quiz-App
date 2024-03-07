@@ -32,6 +32,8 @@ namespace DesktopQuizApp.ViewModels
             {
                 _questions.Clear();
 
+                Name = reader.ReadLine() ?? "Quiz";
+
                 while(!reader.EndOfStream)
                 {
                     string? line = reader.ReadLine();
