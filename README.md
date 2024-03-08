@@ -1,5 +1,5 @@
 # Desktop Quiz App
-Simple quiz app
+Simple quiz app for Windows.
 
 ## File format
 The quiz app reads files of the `*.quiz` format which is a semicolon separated text file.
