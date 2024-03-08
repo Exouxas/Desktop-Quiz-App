@@ -61,7 +61,7 @@ namespace DesktopQuizApp.ViewModels
         public bool Next()
         {
             _questionPointer++;
-            if (_questions.Count >= _questionPointer) return false;
+            if (_questionPointer >= _questions.Count) return false;
 
             CurrentQuestion = _questions[_questionPointer];
             return true;
