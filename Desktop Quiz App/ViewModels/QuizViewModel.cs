@@ -16,7 +16,9 @@ namespace DesktopQuizApp.ViewModels
         public string Name { get; set; } = "";
         public QuestionModel CurrentQuestion { get; set; }
 
+
         private List<QuestionModel> _questions = new();
+        private int _questionPointer = 0;
 
 
         public QuizViewModel()
@@ -49,15 +51,23 @@ namespace DesktopQuizApp.ViewModels
                 }
 
                 CurrentQuestion = _questions.FirstOrDefault();
-
+                _questionPointer = 0;
 
                 reader.Close();
                 return true;
             }
         }
 
+        public bool Next()
+        {
+            _questionPointer++;
+            if (_questions.Count >= _questionPointer) return false;
+
+            CurrentQuestion = _questions[_questionPointer];
+            return true;
+        }
+
         
         // TODO: Method for evaluating and summing current question
-        // TODO: Method for stepping to the next question
     }
 }
