@@ -12,7 +12,7 @@ namespace DesktopQuizApp.ViewModels
     /// </summary>
     public class QuizViewModel
     {
-        public string Name { get; set; }
+        public string Name { get; set; } = "";
 
         private List<QuestionViewModel> _questions = new();
 
