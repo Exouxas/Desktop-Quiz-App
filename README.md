@@ -18,3 +18,6 @@ What planet is closest to the sun?;3;3;1;Pluto;Mars;Earth;Mercury
 This quiz will be titled `General Knowledge`, and have the maximum score of `5` and a minimum score of `-3`. 
 - The first question rewards `2` points for a right answer and `2 times 0` for a wrong answer.
 - The second question rewards `3` points for a right answer and `-3 times 1` for a wrong answer.
+
+## Building
+This project can be built in Visual Studio using the [solution file](https://github.com/Exouxas/Desktop-Quiz-App/blob/main/Desktop%20Quiz%20App.sln) in this repo.
