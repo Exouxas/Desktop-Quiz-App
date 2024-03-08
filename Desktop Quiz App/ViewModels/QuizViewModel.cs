@@ -22,8 +22,7 @@ namespace DesktopQuizApp.ViewModels
         /// <param name="filename">Full path to the quiz to be loaded</param>
         public QuizViewModel()
         {
-            // TODO: Logic for loading the file
-            // TODO: Logic for populating list with questions
+
         }
 
         public bool LoadQuiz(string filename)
