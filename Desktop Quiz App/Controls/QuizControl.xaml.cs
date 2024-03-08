@@ -39,7 +39,15 @@ namespace DesktopQuizApp.Controls
             // If the next question can't be loaded
             if (!_viewModel.Next())
             {
+                // Destroy the question area and show score
+                QuizGrid.Children.Remove(QuestionGrid);
+                QuizGrid.Children.Remove(NextButton);
 
+                Label scoreLabel = new();
+                scoreLabel.FontSize = 40;
+                scoreLabel.Content = $"You got {_viewModel.Score} out of {_viewModel.MaxScore} points!";
+                QuizGrid.Children.Add(scoreLabel);
+                Grid.SetRow(scoreLabel, 1);
             }
         }
     }

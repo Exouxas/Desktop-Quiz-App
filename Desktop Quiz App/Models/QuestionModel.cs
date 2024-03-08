@@ -14,16 +14,16 @@ namespace DesktopQuizApp.Models
     /// <param name="value">An arbitrary value that the quiz can use to calculate score</param>
     /// <param name="penalty">The amount of negative points (out of the value) being subtracted upon a wrong answer</param>
     /// <param name="options">An array of possible answers</param>
-    public struct QuestionModel(string query, int correctAnswer, float value, float penalty, string[] options)
+    public class QuestionModel(string query, int correctAnswer, float value, float penalty, string[] options)
     {
         public string Query { get; } = query;
         public string[] Options { get; } = options;
         public int SelectedAnswer { get; set; } = 0;
         public string CorrectAnswer { get; } = options[correctAnswer];
+        public float Value { get; } = value;
 
 
-        private int _correctAnswer = correctAnswer;
-        private float _value = value;
+        private int _correctAnswerIndex = correctAnswer;
         private float _penalty = penalty;
 
         /// <summary>
@@ -31,20 +31,16 @@ namespace DesktopQuizApp.Models
         /// </summary>
         /// <param name="answer"></param>
         /// <returns></returns>
-        public bool CheckAnswer(int answer) { return answer == _correctAnswer; }
-
-        /// <summary>
-        /// Gets the amount of points that should be awarded if the answer is correct
-        /// </summary>
-        /// <returns></returns>
-        public float CorrectPoints() { return _value; }
-
-        /// <summary>
-        /// Gets the amount of points that should be awarded if the answer is wrong
-        /// </summary>
-        /// <returns></returns>
-        public float WrongPoints() { return -_value * _penalty; }
-
-        // TODO: Replace this with something more sensible. I don't like the way you get the points, as it feels like getters and setters from Java.
+        public float CheckAnswer() 
+        { 
+            if(SelectedAnswer == _correctAnswerIndex)
+            {
+                return Value;
+            }
+            else
+            {
+                return -Value * _penalty;
+            }
+        }
     }
 }
