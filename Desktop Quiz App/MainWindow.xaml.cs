@@ -55,8 +55,5 @@ namespace DesktopQuizApp
                 }
             }
         }
-
-        // TODO: Event handler for next question
-        // Either remove the previous question and add the new one, or update the control(s) to match
     }
 }
