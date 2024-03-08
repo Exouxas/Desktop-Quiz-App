@@ -19,7 +19,18 @@
         </Grid.RowDefinitions>
 
         <Label Grid.Row="0" Content="{Binding Name}" FontSize="30"/>
-        <!-- Current question gets inserted here -->
+        
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Content="{Binding CurrentQuestion.Query}" FontSize="20"/>
+            <ListBox Grid.Row="1" ItemsSource="{Binding CurrentQuestion.Options}" SelectedIndex="{Binding CurrentQuestion.SelectedAnswer}"/>
+
+        </Grid>
+        
         <Button Grid.Row="2" x:Name="NextButton" Content="Next" Click="NextButton_Click"/>
     </Grid>
 </UserControl>

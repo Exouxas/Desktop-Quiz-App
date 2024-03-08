@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesktopQuizApp.ViewModels
+namespace DesktopQuizApp.Models
 {
     /// <summary>
     /// Contains paramaters for a specific questions
@@ -14,7 +14,7 @@ namespace DesktopQuizApp.ViewModels
     /// <param name="value">An arbitrary value that the quiz can use to calculate score</param>
     /// <param name="penalty">The amount of negative points (out of the value) being subtracted upon a wrong answer</param>
     /// <param name="options">An array of possible answers</param>
-    public struct QuestionViewModel(string query, int correctAnswer, float value, float penalty, string[] options)
+    public struct QuestionModel(string query, int correctAnswer, float value, float penalty, string[] options)
     {
         public string Query { get; } = query;
         public string[] Options { get; } = options;

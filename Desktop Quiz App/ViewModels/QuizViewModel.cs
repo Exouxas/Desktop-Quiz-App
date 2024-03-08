@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DesktopQuizApp.Models;
 
 namespace DesktopQuizApp.ViewModels
 {
@@ -13,8 +14,9 @@ namespace DesktopQuizApp.ViewModels
     public class QuizViewModel
     {
         public string Name { get; set; } = "";
+        public QuestionModel CurrentQuestion { get; set; }
 
-        private List<QuestionViewModel> _questions = new();
+        private List<QuestionModel> _questions = new();
 
 
         public QuizViewModel()
@@ -37,7 +39,7 @@ namespace DesktopQuizApp.ViewModels
 
                     string[] parts = line.Split(';');
 
-                    _questions.Add(new QuestionViewModel(
+                    _questions.Add(new QuestionModel(
                         parts[0],
                         int.Parse(parts[1]),
                         float.Parse(parts[2]),
@@ -45,6 +47,8 @@ namespace DesktopQuizApp.ViewModels
                         parts.Skip(4).ToArray()
                         ));
                 }
+
+                CurrentQuestion = _questions.FirstOrDefault();
 
 
                 reader.Close();
