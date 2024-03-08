@@ -21,19 +21,26 @@ namespace DesktopQuizApp.Controls
     /// </summary>
     public partial class QuizControl : UserControl
     {
+        private readonly QuizViewModel? _viewModel;
+
         public QuizControl()
         {
             InitializeComponent();
         }
 
-        public QuizControl(QuizViewModel viewmodel) : this()
+        public QuizControl(QuizViewModel viewModel) : this()
         {
-            this.DataContext = viewmodel;
+            _viewModel = viewModel;
+            this.DataContext = viewModel;
         }
 
         private void NextButton_Click(object sender, RoutedEventArgs e)
         {
+            // If the next question can't be loaded
+            if (!_viewModel.Next())
+            {
 
+            }
         }
     }
 }

@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CommunityToolkit.Mvvm.ComponentModel;
 using DesktopQuizApp.Models;
 
 namespace DesktopQuizApp.ViewModels
@@ -11,10 +12,12 @@ namespace DesktopQuizApp.ViewModels
     /// <summary>
     /// Contains sets of questions and evaluates score
     /// </summary>
-    public class QuizViewModel
+    public partial class QuizViewModel : ObservableObject
     {
         public string Name { get; set; } = "";
-        public QuestionModel CurrentQuestion { get; set; }
+
+        [ObservableProperty]
+        private QuestionModel _currentQuestion;
 
 
         private List<QuestionModel> _questions = new();

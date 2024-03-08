@@ -20,14 +20,14 @@
 
         <Label Grid.Row="0" Content="{Binding Name}" FontSize="30"/>
         
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" DataContext="{Binding CurrentQuestion, UpdateSourceTrigger=PropertyChanged}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Label Grid.Row="0" Content="{Binding CurrentQuestion.Query}" FontSize="20"/>
-            <ListBox Grid.Row="1" ItemsSource="{Binding CurrentQuestion.Options}" SelectedIndex="{Binding CurrentQuestion.SelectedAnswer}"/>
+            <Label Grid.Row="0" Content="{Binding Query}" FontSize="20"/>
+            <ListBox Grid.Row="1" ItemsSource="{Binding Options}" SelectedIndex="{Binding SelectedAnswer}"/>
 
         </Grid>
         
