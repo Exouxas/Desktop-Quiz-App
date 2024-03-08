@@ -20,6 +20,6 @@
 
         <Label Grid.Row="0" Content="{Binding Name}" FontSize="30"/>
         <!-- Current question gets inserted here -->
-        <Button Grid.Row="2" Content="Next" Click="NextButton_Click"/>
+        <Button Grid.Row="2" x:Name="NextButton" Content="Next" Click="NextButton_Click"/>
     </Grid>
 </UserControl>
