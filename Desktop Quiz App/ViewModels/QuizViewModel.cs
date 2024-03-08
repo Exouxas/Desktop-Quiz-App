@@ -16,10 +16,7 @@ namespace DesktopQuizApp.ViewModels
 
         private List<QuestionViewModel> _questions = new();
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="filename">Full path to the quiz to be loaded</param>
+
         public QuizViewModel()
         {
 
