@@ -18,6 +18,7 @@ namespace DesktopQuizApp.ViewModels
     {
         public string Query { get; } = query;
         public string[] Options { get; } = options;
+        public int SelectedAnswer { get; set; } = 0;
         public string CorrectAnswer { get; } = options[correctAnswer];
 
 
